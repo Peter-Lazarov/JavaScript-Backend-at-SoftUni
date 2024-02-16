@@ -15,6 +15,7 @@ exports.register = async (userForm) => {
     }
 
     const createdUser = await User.create(userForm);
+    console.log(createdUser.createdAt);
 
     const token = await generateToken(createdUser);
 
@@ -48,3 +49,5 @@ function generateToken(userObject){
 
     return jsonwebtoken.sign(payload, secretKey, { expiresIn: '2h'});
 };
+
+exports.getUser = (userId) => User.findById(userId).populate(['createdCourses', 'signedUpCourses']);

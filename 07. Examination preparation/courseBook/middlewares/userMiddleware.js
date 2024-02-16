@@ -29,3 +29,11 @@ exports.isAuthenticated = (request, response, next) => {
 
     next();
 };
+
+exports.isGuest = (request, response, next) => {
+    if (request.user) {
+        return response.redirect('/');
+    }
+
+    next();
+};

@@ -16,5 +16,8 @@
     "express-handlebars": "^7.1.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "@types/mongoose": "5.10.5"
   }
 }
